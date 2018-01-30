@@ -1,0 +1,22 @@
+{
+    "name": "TestGulp",
+    "version": "1.0.0",
+    "description": "This is landing page",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "gulp"
+    },
+    "author": "Manockov Vladislav",
+    "license": "ISC",
+    "devDependencies": {
+        "autoprefixer": "^7.2.5",
+        "browser-sync": "^2.23.6",
+        "gulp": "github:gulpjs/gulp#4.0",
+        "gulp-pug": "^3.3.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^3.1.0",
+        "gulp-sourcemaps": "^2.6.4",
+        "gulp.spritesmith": "^6.9.0",
+        "rimraf": "^2.6.2"
+    }
+}
