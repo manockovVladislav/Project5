@@ -7,6 +7,7 @@ const rimraf = require('rimraf');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('autoprefixer');
+const postcss = require('gulp-postcss');
 
 
 
@@ -35,10 +36,11 @@ gulp.task('templates:compile', function buildHTML() {
 gulp.task('styles:compile', function() {
     return gulp.src('source/styles/main.scss')
         .pipe(sourcemaps.init())
-        /*.pipe(postcss([autoprefixer({
-            browsers: ['last 4 versions']
-        })]))*/
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+        .pipe(postcss([autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        })]))
         .pipe(rename('main.min.css'))
         .pipe(sourcemaps.write('../maps'))
         .pipe(gulp.dest('build/css'));
